@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore API</title>
+    <!--* tailwind and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="container mx-auto mt-12 mb-5">
+        <div class="form-control w-full max-w-xs mx-auto">
+            <label class="label">
+                <span class="label-text">Search your product</span>
+                <span class="label-text-alt"><kbd class="kbd kbd-md">press enter</kbd></span>
+            </label>
+            <input id="search-field" type="text" placeholder="Search here"
+                class="input input-bordered w-full max-w-xs" />
+        </div>
+    </header>
+    <progress id="spinner" class="progress w-full mb-5 hidden"></progress>
+    <!--* not found -->
+    <section id="not-found"></section>
+    <!-- <p class="hidden text-orange">Not Found</p> -->
+    <main>
+        <section class="container mx-auto">
+            <div class="flex gap-12">
+                <!--* menu -->
+                <div class="flex-none">
+                    <ul id="all-menu" class="menu bg-teal-600 text-white p-2 rounded-box">
+                        <!-- <li><a>Item 1</a></li>
+                        <li><a>Item 2</a></li>
+                        <li><a>Item 3</a></li> -->
+                    </ul>
+                </div>
+                <!--* products -->
+                <div id="product-container" class="grow grid grid-cols-3 gap-5">
+                    <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                        <div class="card-body">
+                            <h2 class="card-title">Shoes!</h2>
+                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <div class="card-actions justify-end">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- * Put this part before body tag -->
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <div id="modal-body">
+                
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
