@@ -25,11 +25,15 @@ setAllMenu = async () => {
 }
 const searchField =  document.getElementById('search-field')
 searchField.addEventListener('keypress', async(e) => {
+    //* spinner start
     const spinner = document.getElementById('spinner');
     spinner.classList.remove('hidden');
+    
     if(e.key === 'Enter'){
         const searchValue = searchField.value;
         const allProducts = await loadProducts();
+        
+        //* spinner end
         spinner.classList.add('hidden')
 
         const productContainer = document.getElementById('product-container');
@@ -37,8 +41,9 @@ searchField.addEventListener('keypress', async(e) => {
         productContainer.textContent = '';
         notFound.textContent = '';
 
-        const foundProducts = allProducts.filter(product => product.category.includes(searchValue))
-
+        const foundProducts = allProducts.filter(product => product.category.includes(searchValue));
+        
+        //* not found message
         if(foundProducts.length === 0){
             notFound.innerHTML = `<p class="text-red-500 text-center">Not Found</p>`;
             return;
